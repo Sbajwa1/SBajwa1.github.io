@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--Shubh-->
+<html>
+  <head>
+    <title>ParisTouristAttractions</title>
+    <h1>
+    Paris
+    </h1>
+    
+    <hr>
+    
+    <h2>
+    Tourist Attractions
+    </h2>
+  </head>
+  <body>
+    <ul>
+      <li>Eiffel Tower</li>
+      <img src="https://goo.gl/images/f7PUUY" alt="Eiffel Tower">
+      <li>Louvre</li>
+      <li>Arc de Triomphe</li>
+      <li>Notre Dame de Paris</li>
+      <li>Sacre-Coeur</li>
+    </ul>
+  </body>
+</html>
