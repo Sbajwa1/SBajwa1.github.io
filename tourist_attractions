@@ -2,7 +2,6 @@
 <!--Shubh-->
 <html>
   <head>
-    <title>ParisTouristAttractions</title>
     <h1>
     Paris
     </h1>
@@ -19,7 +18,7 @@
       <li>Louvre</li>
       <li>Arc de Triomphe</li>
       <li>Notre Dame de Paris</li>
-      <li>Sacre Coeur</li>
+      <li>Sacre-Coeur</li>
     </ul>
   </body>
 </html>
