@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+body {
+  font-family: arial;
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+<h1>
+Sleep Debt Calculator
+</h1>
+<hr>
+</body>
 <script>
  function getSleepHours(day) {
    let hours = prompt("How many hours of sleep did you get on " + day + "");
    return Number(hours);
  }
-
  function getActualSleepHours() {
    return getSleepHours("Monday") +
      getSleepHours("Tuesday") +
@@ -15,12 +29,10 @@
      getSleepHours("Saturday") +
      getSleepHours("Sunday");
  }
-
  function getIdealSleepHours() {
-   let ideal = prompt("How maynt hours of sleep is ideal for you in one night?");
+   let ideal = prompt("How many hours of sleep is ideal for you in one night?");
    return Number(ideal) * 7;
  }
-
  function calculateSleepDebt() {
    let actualSleepHours = getActualSleepHours();
    let idealSleepHours = getIdealSleepHours();
