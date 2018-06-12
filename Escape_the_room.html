@@ -1,0 +1,212 @@
+<!DOCTYPEhtml>
+<html>
+
+  <head>
+    <style>
+      body {
+        background-color: rgb(204, 204, 255);
+      }
+
+    </style>
+    <center>
+      <h1>Escape the school!</h1>
+      <button onclick="gameStart()">Click to play!</button>
+    </center>
+    <script>
+      function gameStart() {
+        let firstChoice = prompt('Are you ready to play?');
+        firstChoice = firstChoice.toLowerCase();
+        if (firstChoice === 'yes') {
+          newGame();
+        } else {
+          alert('Invalid Choice')
+          gameStart();
+        }
+      }
+
+      function newGame() {
+        alert('You wake up in a strange room. As you regain your senses you start to see this room resemble a classroom. upon further inspection it seems to be an elementary school. The Door to the hallway is open but you could also check the windows.');
+        let startRoom = prompt('Where do you want to go? Windows or Hallway');
+        startRoom = startRoom.toLowerCase();
+        switch (startRoom) {
+          case 'hallway':
+            alert('You enter the Hallway')
+            hallway();
+            break;
+          case 'windows':
+            alert('you look outside the windows and see pitch black. You attempt to open the windows but no matter how hard you try the windows wont open. It seems as if the windows are a decoration rather than an actual window.');
+            newGame();
+            break;
+          default:
+            alert('Did you enter it correctly?');
+            newGame();
+            break;
+        }
+      }
+
+      function hallway() {
+        alert('Upon entering the hallway the door leading to the class room slams shut. You see multiple closed doors, a staircase, and another open door leading to the Gym');
+        let hallChoice = prompt('Where do you want to go? Closed doors, Staircase or Gym');
+        hallChoice = hallChoice.toLowerCase();
+        switch (hallChoice) {
+          case 'gym':
+            alert('You enter the gym');
+            gym();
+            break;
+          case 'closed doors':
+              alert('You check the doors but they seem to be locked.');
+              hallway();
+            break;
+          case 'staircase':
+            alert('You enter the staircase and go down the stairs.');
+            downstairs();
+            break;
+          default:
+            alert('Did you enter it correctly?');
+            hallway();
+            break;
+        }
+      }
+
+      function gym() {
+        alert('You see papers all over the ground. Each paper having something written on them. The messages look like they could be useful.')
+        let readPaper = prompt('would you like to read some of the papers');
+        readPaper = readPaper.toLowerCase();
+        switch (readPaper) {
+          case 'yes':
+            alert('You read some papers and they all seem to be random riddles. Just as you are about to leave you see something from the corner of your eye. A message on the paper saying "These messages are not what they seem."')
+            alert('There is nothing else useful here.')
+            hallway();
+            break;
+          case 'no':
+            alert('You leave the room')
+            hallway();
+            break;
+          default:
+            alert('Please enter "Yes" or "No".')
+            gym();
+            break;
+        }
+      }
+
+      function downstairs() {
+        alert('As you go down the stairs you hear something collapse. At the bottom of the stairs there is rubble blocking the rest of the hall. The only thing you can get to is the front door.')
+        let checkDoor = prompt('Will you try to open the front door?')
+        checkDoor = checkDoor.toLowerCase();
+        if (checkDoor === 'yes') {
+          alert('You try to open the door but it is locked and there is a message written on the door. "The key to your escape lies within the room you started." You hear a noise sounding like footsteps coming from upstairs.')
+          upstairs();
+        } else if (checkDoor === 'no') {
+          alert('Your body starts to move on its own toward the door. You see a message on the door. "The key to your escape lies within the room you started." You hear a noise sounding like footsteps coming from upstairs.')
+          upstairs();
+        } else {
+          alert('Please enter "Yes" or "No"')
+          downstairs();
+        }
+      }
+
+      function upstairs() {
+        alert('The gym door has been blocked. The door leading to the room you woke up in is now open again.')
+        let keyChoice = prompt('Where do you want to go. Classroom or closed doors.')
+        keyChoice = keyChoice.toLowerCase();
+        switch (keyChoice) {
+          case 'classroom':
+            alert('You enter the classroom.')
+            classroom();
+            break;
+          case 'closed doors':
+            if (blueKey === true) {
+              alert('You put the key into the door and it fits perfectly. You enter the room.');
+              doors();
+            } else {
+              alert('You check the doors but they seem to be locked.');
+              upstairs();
+            }
+            break;
+          default:
+            alert('Invalid Choice.')
+            upstairs();
+            break;
+        }
+      }
+
+      function classroom() {
+        alert('You see something shiny on the ground. As you go to investigate it looks like a key. You notice something in the corner of the room.')
+        let cornerCheck = prompt('Do you want to investigate the room?')
+        cornerCheck = cornerCheck.toLowerCase();
+        switch (cornerCheck) {
+          case 'yes':
+            alert('You notice a black mass in the corner. You look at it and feel like you lose control of your body. Your body collapes and you feel nothing.')
+            alert('You die')
+            gameStart();
+            break;
+          case 'no':
+            alert('You took the key and left the room.')
+            upstairs2();
+        }
+      }
+
+      function upstairs2() {
+        let blueKey = true
+        alert('You leave left the classroom. The gym door is still blocked off.')
+        let keyChoice2 = prompt('Where do you want to go. Staircase or closed doors.')
+        keyChoice2 = keyChoice2.toLowerCase();
+        switch (keyChoice2) {
+          case 'staircase':
+            alert('You go down the staircase.')
+            downstairs2();
+            break;
+          case 'closed doors':
+            if (blueKey === true) {
+              alert('You put the key into the door and it fits perfectly. You enter the room.');
+              doors();
+            } else {
+              alert('You check the doors but they seem to be locked.');
+              upstairs2();
+            }
+            break;
+          default:
+            alert('Invalid Choice.')
+            upstairs2();
+            break;
+        }
+      }
+
+      function doors() {
+        alert('You see another key on the ground. There is also a note on the ground next to it. It tells you to put the key on the ground into the frontdoor.')
+        let takeOrNot = prompt('Do you want to take the key?')
+        takeOrNot = takeOrNot.toLowerCase();
+        switch (takeOrNot) {
+          case 'yes':
+            alert('You took the key')
+            downstairs3();
+            break;
+          case 'no':
+            alert('You decided to leave the key')
+            downstairs2();
+            break;
+          default:
+            alert('Please enter "Yes" or "No".')
+            break;
+        }
+      }
+
+      function downstairs2() {
+        alert('You get the the bottom of the stairs. You check to see if the key fits in the keyhole. It is a perfect fit. You exit the building but all you see are trees. You go out to into the woods to try to get home. You end up getting lost there forever.')
+        alert('You Die')
+        gameStart();
+      }
+
+      function downstairs3() {
+        alert('You get the the bottom of the stairs. You put the red key in and it fits perfectly. You open the door and you see your room. You feel relieved and happy you made it out.')
+        gameEnd();
+      }
+
+      function gameEnd() {
+        Alert('you win! You can click the button to play again.')
+      }
+
+    </script>
+  </head>
+
+</html>
